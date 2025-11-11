@@ -47,7 +47,7 @@ const teamMembers = [
 ];
 /* ELEMENTI DOM NECESSARI */
 
-const row = document.querySelector(".row");
+const rowCard = document.querySelector(".row");
 stampaCard();
 
 function stampaCard() {
@@ -57,7 +57,7 @@ function stampaCard() {
     const card = componeCard(curElement);
     stringaCard += card;
   }
-  row.innerHTML = stringaCard;
+  rowCard.innerHTML = stringaCard;
 }
 
 function componeCard(element) {
