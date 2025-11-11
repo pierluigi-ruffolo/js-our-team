@@ -97,11 +97,13 @@ formElement.addEventListener("submit", (e) => {
 });
 
 function oggettoInput() {
+  const file = inputImg.files[0];
+  let imageURL = URL.createObjectURL(file);
   let nameUtente = {
     name: inputName.value,
     role: inputRole.value,
     email: inputEmail.value,
-    img: inputImg.value,
+    img: imageURL,
   };
   teamMembers.push(nameUtente);
 }
