@@ -45,3 +45,40 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
+/* ELEMENTI DOM NECESSARI */
+
+const row = document.querySelector(".row");
+stampaCard();
+
+function stampaCard() {
+  let stringaCard = "";
+  for (let i = 0; i < teamMembers.length; i++) {
+    const curElement = teamMembers[i];
+    const card = componeCard(curElement);
+    stringaCard += card;
+  }
+  row.innerHTML = stringaCard;
+}
+
+function componeCard(element) {
+  let conteinerCard = "";
+  const { name, role, email, img } = element;
+  conteinerCard += `<div class="col-12 col-md-4 mt-3">
+             <div class="card">
+            <img src="${img}" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title text-center mb-2">${name}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center text-success">${role}</li>
+                <li class="list-group-item">
+                <div class="d-flex justify-content-center">
+                  <a href="#">${email}</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>`;
+
+  return conteinerCard;
+}
