@@ -45,11 +45,18 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
-/* ELEMENTI DOM NECESSARI */
-
+/* ELEMENTI DOM Card */
 const rowCard = document.querySelector(".row");
-stampaCard();
+/* elementi dom form */
+const formElement = document.querySelector("form");
+const inputName = document.querySelector("#name");
+const inputRole = document.querySelector("#role");
+const inputEmail = document.querySelector("#email");
+const inputImg = document.querySelector("#imaggine");
 
+/* richiamo funzione che stampa le card in pagina */
+stampaCard();
+/* funzione che stampa le card */
 function stampaCard() {
   let stringaCard = "";
   for (let i = 0; i < teamMembers.length; i++) {
@@ -59,7 +66,7 @@ function stampaCard() {
   }
   rowCard.innerHTML = stringaCard;
 }
-
+/* funzione che compone le card */
 function componeCard(element) {
   let conteinerCard = "";
   const { name, role, email, img } = element;
@@ -81,4 +88,20 @@ function componeCard(element) {
           </div>`;
 
   return conteinerCard;
+}
+
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+  oggettoInput();
+  stampaCard();
+});
+
+function oggettoInput() {
+  let nameUtente = {
+    name: inputName.value,
+    role: inputRole.value,
+    email: inputEmail.value,
+    img: inputImg.value,
+  };
+  teamMembers.push(nameUtente);
 }
