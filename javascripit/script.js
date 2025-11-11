@@ -64,15 +64,15 @@ function componeCard(element) {
   let conteinerCard = "";
   const { name, role, email, img } = element;
   conteinerCard += `<div class="col-12 col-md-4 mt-3">
-             <div class="card">
-            <img src="${img}" class="card-img-top" alt="" />
+             <div class="card rounded-4">
+            <img src="${img}" class="card-img-top" alt="${name}" />
             <div class="card-body">
-              <h5 class="card-title text-center mb-2">${name}</h5>
+              <h5 class="card-title text-center mb-2 fs-2">${name}</h5>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item text-center text-success">${role}</li>
+                <li class="list-group-item text-center text-success fs-6">${role}</li>
                 <li class="list-group-item">
-                <div class="d-flex justify-content-center">
-                  <a href="#">${email}</a>
+                <div class="d-flex justify-content-center ">
+                  <a href="#" class="fs-6 text-decoration-none">${email}</a>
                   </div>
                 </li>
               </ul>
